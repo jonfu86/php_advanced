@@ -6,8 +6,9 @@
 	<style type="text/css">
 	
 	table{
-		border:1px black solid;
 		border-collapse: collapse;
+		display:inline-block;
+		margin: 40px;
 	}
 	table td{
 		border:1px black solid;
@@ -18,17 +19,21 @@
 		background:red;
 	}
 	.black{
-		background-color:black;
+		background:black;
 	}
-	
-
+	.white{
+		background:white;
+	}
+	.green{
+		background:green;
+	}
 	</style>
 
 </head>
 <body>
 	<?php
 
-	function checkers($grid){
+	function checkers($grid, $color_1, $color_2){
 		echo '<table>';
 		for ($y=0; $y < $grid; $y++) 
 		{ 
@@ -37,19 +42,20 @@
 			{
 				if($x % 2 == 0 && $y % 2 == 0 || $x % 2 != 0 && $y % 2 != 0)
 				{
-				echo '<td class="red"></td>';
+				echo '<td class="'.$color_1.'"></td>';
 				}
 				else
 				{
-				echo '<td class="black"></td>';
+				echo '<td class="'.$color_2.'"></td>';
 				}
 			}
 			echo '</tr>';
 		}
 			echo '</table>';
 	}
-	checkers(8);
+	checkers(8, 'red', 'black');
 
+	checkers(8, 'white', 'green')
 
 	?>
 </body>
