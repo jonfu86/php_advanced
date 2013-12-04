@@ -35,7 +35,7 @@
 			echo '<tr>';
 			for($x=0; $x<$grid; $x++)
 			{
-				if($x % 2 !=1)
+				if($x % 2 == 0 && $y % 2 == 0 || $x % 2 != 0 && $y % 2 != 0)
 				{
 				echo '<td class="red"></td>';
 				}
